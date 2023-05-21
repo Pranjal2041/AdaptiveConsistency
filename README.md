@@ -1,5 +1,5 @@
 # Adaptive Consistency: 
-A Library for Running efficient LLM generation using [Adaptive-Consistency](https://github.com/Pranjal2041/AdaptiveConsistency.git) in your code.
+A Library for Running efficient LLM generation using [Adaptive-Consistency](http://sample-step-by-step.info) in your code.
 
 ## Introduction
 Introduction Here

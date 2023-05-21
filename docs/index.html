@@ -148,7 +148,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://huggingface.com/Pranjal2041"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -156,7 +156,7 @@
                   </span>
                   <span>Demo</span>
                 </a>
-              </span>
+              </span> -->
 
               <!-- Video Link. -->
               <!-- <span class="link-block">
@@ -180,7 +180,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/Pranjal2041/AdaptiveConsistency"
+                <a href="https://github.com/Pranjal2041/AdaptiveConsistency/tree/main/outputs"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -217,7 +217,21 @@
       <div class="hero-body">
           <div class="content has-text-justified is-size-4">
               
-              <p>Adaptive-Consistency is a novel approach that samples from LLMs iteratively, each time deciding to stop based on the consistency of outputs. It perfroms superior to naive greedy-decoding, and reduces sample budget of Self-Consistency significantly.</p>
+            <p>Presenting <strong>Adaptive-Consistency:</strong> Boost LLM Performance with Less Sample Budget 🚀</p>
+
+            <p>Achieve superior results compared to greedy-decoding while reducing the sample budget of Self-Consistency by up to <strong>6.0x times</strong> with <strong>negligible accuracy drop</strong> (< 0.1%)! 💡</p>
+            
+            <p>Self-Consistency is widely used to enhance LLM performance by sampling multiple times. But what if you could stop early and save sample budget without sacrificing accuracy? 🤔 </p>
+            
+            <p><strong>Adaptive-Consistency:</strong> is here to help! Our method automatically stops early based on the consistency of sampled answers, saving you significant sample budget and time! ⏱️💰 </p>
+            
+
+              <p><strong>Adaptive-Consistency</strong> is a lightweight method that performs superior to greedy-decoding, and reduces sample budget of Self-Consistency by upto 6.0x times with negligible accuracy drop (< 0.1%)!</p>
+
+              <p>
+                Self-Consistency is a commonly used method that boosts the performance of LLMs by sampling multiple times. However, what if you've already drawn a substantial number of samples, and want to stop early? Who decides when to stop? Can we stop early to save sample budget?
+                <strong>Adaptive-Consistency</strong> helps you automatically stop early based on the consistency of sampled answers, saving you significant sample budget and time! ⏱️💰
+              </p>
           </div>
           <video id="teaser" autoplay muted playsinline height="100%">
             <!-- Insert GIF here -->
@@ -308,6 +322,9 @@
           <p>
             In response, we introduce <b>Adaptive-Consistency</b>, a cost-efficient, model-agnostic technique that <i>dynamically</i> adjusts the number of samples per question using a lightweight stopping criterion. Our experiments over 13 datasets and two LLMs demonstrate that Adaptive-Consistency reduces sample budget by up to 6.0 times with an average accuracy drop of less than 0.1%.
           </p>
+
+
+
         </div>
       </div>
     </div>
@@ -327,14 +344,39 @@
   </div>
 </section>
 
+<section class="section" id="highlights">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+          <div class="column ">
+          
+            <h2 class="title is-3">Key-Highlights</h2>
+            
+            <!-- List View using bulma template -->
+            <!-- <div class="columns is-centered">
+              <div class="column is-four-fifths"> -->
+                <div class="content has-text-justified is-size-4">
+                  <ul>
+                    <li>🚀 <strong>Dynamic Sampling:</strong> Our method smartly adjusts the number of samples per question using a lightweight stopping criterion.</li>
+                    <li>📊<strong>Cost-Effective Performance:</strong> Adaptive-Consistency reduces the sample budget by up to <strong>6.0 times</strong> with an average accuracy drop of less than <strong>0.1%</strong>.</li>
+                    <li>🔌<strong>Off-the-Shelf Solution:</strong> Improve accuracy or reduce cost right away with just 2-3 lines of code changes. No additional training required.</li>
+                    <li>🌐<strong>Compatible with Pre-trained LLMs:</strong> Our method works seamlessly with popular large language models like GPT-3.</li>
+                  </ul>
+                </div>
+              <!-- </div>
 
+            </div> -->
+            <!--/ List View using bulma template -->
+          </div>
+      </div>
+  </div>
+</section>
 <!-- Results Section -->
 <section class="section" id="results">
   <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
               <h2 class="title is-3">Results Summary</h2>
-              <strong><span class="pal">Adaptive-Consistency</span> outperforms Self-Consistency on 13 benchmarks, ov varying domain, difficulty, answer type.</strong>
+              <strong><span class="pal">Adaptive-Consistency</span> outperforms Self-Consistency on 13 benchmarks, over varying domain, difficulty, answer type.</strong>
               <!-- Add vertical space -->
               <br>
               <br>
@@ -383,9 +425,9 @@
       <!-- # Create two nested boxes. -->
       <div class="box has-background-light">
         <!-- <div class="box has-background-light"> -->
-          <div class="content has-text-justified is-size-5">
+          <div class="content has-text-justified is-size-6">
             <p>
-              <strong>1. Modify Self-Consistency?</strong>
+              <strong>1. Modifying Self-Consistency</strong>
             </p>
             <pre class=" language-python" data-src="static/js/prism-line-highlight.js" data-line="1,7,8"><code class=" language-python diff-highlight language-diff">from adaptive_consistency import AC
 
@@ -402,9 +444,9 @@ for input in dataset:
 
         <div class="box has-background-light">
           <!-- <div class="box has-background-light"> -->
-            <div class="content has-text-justified is-size-5">
+            <div class="content has-text-justified is-size-6">
               <p>
-                <strong>2. Modify Vanilla Prompting?</strong>
+                <strong>2. Modifying Vanilla Prompting</strong>
               </p>
               <pre class=" language-python" data-src="static/js/prism-line-highlight.js" data-line="1,3,4"><code class=" language-python diff-highlight language-diff">from adaptive_consistency import AC
 

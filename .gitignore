@@ -2,3 +2,7 @@ build
 dist
 *.egg-info
 *.egg
+transfer_outputs.py
+outputs/code-davinci-002
+outputs/vicuna-13b
+scratch
