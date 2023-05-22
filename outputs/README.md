@@ -1,4 +1,4 @@
-Model outputs from different models on 13 different datasets. \
+Model outputs from different models on 13 different datasets. 
 
 Run `bash download_outputs.sh` to download all the outputs. \
 <br>
