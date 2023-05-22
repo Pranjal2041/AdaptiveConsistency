@@ -1,17 +1,17 @@
 # Let's Sample Step by Step: Adaptive-Consistency for Efficient Reasoning with LLMs
 
 <p align="center">
-  <a href="http://sample-step-by-step.com/">Website</a> •
+  <a href="http://sample-step-by-step.info/">Website</a> •
   <a href="https://arxiv.org/abs/2305.11860">Paper</a> 
 </p>
 
 
 <p align="center">
-    <a href="https://github.com/princeton-nlp/semsup-xc/blob/master/LICENSE">
-            <img src="https://img.shields.io/github/license/princeton-nlp/semsup-xc.svg"
+    <a href="https://github.com/Pranjal2041/AdaptiveConsistency/blob/master/LICENSE">
+            <img src="https://img.shields.io/github/license/Pranjal2041/AdaptiveConsistency.svg"
                 alt="GitHub license">
     </a>
-    <a href="https://twitter.com/intent/tweet?text=Check%20out%20Adaptive-Consistency%3A%20https%3A%2F%2Fgithub.com%2Fpranjal2041%2FAdaptiveeConsistency">
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20AdaptiveConsistency%3A%20https%3A%2F%2Fgithub.com%2Fpranjal2041%2FAdaptiveeConsistency">
     <img src="https://img.shields.io/twitter/url/https/github.com/Pranjal2041/AdaptiveConsistency.svg?style=social" alt="Twitter">
     </a>      
 </p>
@@ -63,7 +63,7 @@ Using Adaptive Consistency in your code requires only 2-3 lines of changes in yo
 ### 1. Importing the library
 
 ```python
-from AdaptiveConsistency import AC, BetaStoppingCriteria
+from adaptive_consistency import AC, BetaStoppingCriteria
 ```
 
 ### 2. Initializing the library
