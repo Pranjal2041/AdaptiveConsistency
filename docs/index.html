@@ -132,15 +132,6 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <!-- <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span> -->
               <span class="link-block">
                 <a href="https://arxiv.org/pdf/2305.11860.pdf"
                    class="external-link button is-normal is-rounded is-dark">
@@ -214,45 +205,29 @@
   </div>
 </section> -->
 
-<!-- <section class="hero teaser">
+<h2 class="subtitle has-text-centered">
+  <span class="dnerf">TLDR:</span> a sampling method that matches Self-Consistency in performance with up to 6x fewer samples.
+</h2>
+
+<section class="hero teaser">
   <div class="container is-max-desktop">
       <div class="hero-body">
-          <div class="content has-text-justified is-size-4">
-              
-            <p>Presenting <strong>Adaptive-Consistency:</strong> Boost LLM Performance with Less Sample Budget 🚀</p>
-
-            <p>Achieve superior results compared to greedy-decoding while reducing the sample budget of Self-Consistency by up to <strong>6.0x times</strong> with <strong>negligible accuracy drop</strong> (< 0.1%)! 💡</p>
-            
-            <p>Self-Consistency is widely used to enhance LLM performance by sampling multiple times. But what if you could stop early and save sample budget without sacrificing accuracy? 🤔 </p>
-            
-            <p><strong>Adaptive-Consistency:</strong> is here to help! Our method automatically stops early based on the consistency of sampled answers, saving you significant sample budget and time! ⏱️💰 </p>
-            
-
-              <p><strong>Adaptive-Consistency</strong> is a lightweight method that performs superior to greedy-decoding, and reduces sample budget of Self-Consistency by upto 6.0x times with negligible accuracy drop (< 0.1%)!</p>
-
-              <p>
-                Self-Consistency is a commonly used method that boosts the performance of LLMs by sampling multiple times. However, what if you've already drawn a substantial number of samples, and want to stop early? Who decides when to stop? Can we stop early to save sample budget?
-                <strong>Adaptive-Consistency</strong> helps you automatically stop early based on the consistency of sampled answers, saving you significant sample budget and time! ⏱️💰
-              </p>
-          </div>
           <video id="teaser" autoplay muted playsinline height="100%">
             <!-- Insert GIF here -->
             <source src="./static/videos/AC_teaser_video.mp4"
                     type="video/mp4">
-          </video>    
-          <!-- <figure class="image is-8by6">
-              <img id="animatedGif" src="./static/videos/adaptive_consistency_teaser.gif">
+          </video> 
+             
+          <!-- <figure class="image">
+              <img id="animatedGif" src="./static/videos/output.gif">
             </figure> -->
-          <h2 class="subtitle has-text-centered">
-             <span class="dnerf">TLDR:</span> a sampling method that matches Self-Consistency in performance with up to 6x fewer samples.
-          </h2>
+
 
       </div>
 
   </div>
 </section>
- -->
-
+ 
 <!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
@@ -421,7 +396,7 @@
   <div class="container is-max-desktop">
     <div class="box has-background-light">
       <h2 class="title is-3">Using Adaptive-Consistency in your code</h2>
-      Using Adaptive-Consistency in your code takes only a couple of line changes.
+      Using Adaptive-Consistency in your code takes only 2-3 line changes.
 
 
       <!-- # Create two nested boxes. -->
@@ -431,13 +406,14 @@
             <p>
               <strong>1. Modifying Self-Consistency</strong>
             </p>
-            <pre class=" language-python" data-src="static/js/prism-line-highlight.js" data-line="1,7,8"><code class=" language-python diff-highlight language-diff">from adaptive_consistency import AC
+            <pre class=" language-python" data-src="static/js/prism-line-highlight.js" data-line="1,4,8,9"><code class=" language-python diff-highlight language-diff">from adaptive_consistency import AC
 
 outputs = []
+ac = AC(stop_criteria = 'beta')
 for input in dataset:
     output = openai.Completion.Create(input, *args, **kwargs)
     outputs.append(output)
-    if AC(stop_criteria = 'beta').should_stop(outputs):
+    if ac.should_stop(outputs):
         break
                 </code></pre>
           </div>
@@ -467,11 +443,13 @@ output = AC(stop_criteria = 'beta').eval_loop(sampling_function, *args, **kwargs
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{aggarwal2023adaptiveconsistency,
-  author    = {Aggarwal, Pranjal and Madaan, Aman and Yang, Yiming and Mausam},
-  title     = {Let's Sample Step by Step: Adaptive-Consistency for Efficient Reasoning with LLMs},
-  journal   = {arXiv preprint arXiv: Arxiv-2305.},
-  year      = {2023},
+    <pre><code>@misc{aggarwal2023lets,
+      title={Let's Sample Step by Step: Adaptive-Consistency for Efficient Reasoning with LLMs}, 
+      author={Pranjal Aggarwal and Aman Madaan and Yiming Yang and Mausam},
+      year={2023},
+      eprint={2305.11860},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }</code></pre>
   </div>
 </section>
@@ -481,7 +459,7 @@ output = AC(stop_criteria = 'beta').eval_loop(sampling_function, *args, **kwargs
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/adaptive_paper.pdf">
+         href="https://arxiv.org/pdf/2305.11860.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/Pranjal2041/AdaptiveConsistency" class="external-link" disabled>

@@ -1,6 +1,7 @@
 import numpy as np
 
 from typing import List, Any
+import warnings
 
 from .stopping_criterias import *
 
@@ -71,7 +72,7 @@ class AC:
             # The function is not initialized, so we need to initialize it
             self.stop_criteria = stop_criteria()
 
-    def is_consistent(self, answers : List[Any], return_dict : bool = False) -> bool:
+    def should_stop(self, answers : List[Any], return_dict : bool = False) -> bool:
         '''
         Checks if the answers are consistent based on Adaptive Consistency Algorithm and corresponding Stopping Criteria.
 
@@ -115,3 +116,11 @@ class AC:
                 return answers
             
 
+stop_criteria_dict = {
+    'beta' : BetaStoppingCriteria,
+    'dirichlet' : DirichletStoppingCriteria,
+    'random' : RandomStoppingCriteria,
+    'majority' : MajorityStoppingCriteria,
+    'entropy' : EntropyStoppingCriteria,
+    'always_false' : AlwaysFalseStoppingCriteria,
+}

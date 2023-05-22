@@ -56,7 +56,7 @@ Or you can check for consistency of answers at each step:
 answers = []
 for i in range(40):
     answers.append(generate_answer_from_model())
-    if ac.check_consistency(answers):
+    if ac.should_stop(answers):
         break
 ```
 

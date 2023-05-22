@@ -52,10 +52,9 @@ class BetaStoppingCriteria(StoppingCriterias):
         return_dict['stop'] = prob >= conf_thresh
         return return_dict
 
-
 class RandomStoppingCriteria(StoppingCriterias):
 
-    def __init__(self, conf_thresh : float = 0.95) -> None:
+    def __init__(self, conf_thresh : float = 0.1) -> None:
         super().__init__()
         self.conf_thresh = conf_thresh
 
@@ -72,7 +71,7 @@ class RandomStoppingCriteria(StoppingCriterias):
     
 class EntropyStoppingCriteria(StoppingCriterias):
 
-    def __init__(self, conf_thresh : float = 0.95) -> None:
+    def __init__(self, conf_thresh : float = 0.75) -> None:
         super().__init__()
         self.conf_thresh = conf_thresh
 
@@ -98,7 +97,7 @@ class EntropyStoppingCriteria(StoppingCriterias):
         
 class MajorityStoppingCriteria(StoppingCriterias):
 
-    def __init__(self, conf_thresh : float = 0.95) -> None:
+    def __init__(self, conf_thresh : float = 0.8) -> None:
         super().__init__()
         self.conf_thresh = conf_thresh
 
@@ -217,3 +216,16 @@ class DirichletStoppingCriteria(StoppingCriterias):
             print(f"Error during numerical integration: {e}")
         
         return return_dict
+    
+class AlwaysFalseStoppingCriteria(StoppingCriterias):
+
+    def __init__(self, *args, **kwargs) -> None:
+        super().__init__()
+
+    def should_stop(self, answers : List, *args, **kwargs) -> Dict:
+        return {
+            'most_common' : Counter(answers).most_common(1)[0][0],
+            'prob' : -1,
+            'stop' : False,
+        }
+    
