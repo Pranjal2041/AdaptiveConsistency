@@ -3,6 +3,7 @@
 <p align="center">
   <a href="http://sample-step-by-step.info/">Website</a> •
   <a href="https://arxiv.org/abs/2305.11860">Paper</a> 
+
 </p>
 
 
@@ -11,8 +12,11 @@
             <img src="https://img.shields.io/github/license/Pranjal2041/AdaptiveConsistency.svg"
                 alt="GitHub license">
     </a>
-    <a href="https://twitter.com/intent/tweet?text=Check%20out%20AdaptiveConsistency%3A%20https%3A%2F%2Fgithub.com%2Fpranjal2041%2FAdaptiveeConsistency">
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20AdaptiveConsistency%3A%20https%3A%2F%2Fgithub.com%2Fpranjal2041%2FAdaptiveConsistency">
     <img src="https://img.shields.io/twitter/url/https/github.com/Pranjal2041/AdaptiveConsistency.svg?style=social" alt="Twitter">
+    </a>
+    <a href="https://pypi.org/project/AdaptiveConsistency/">
+    <img src="https://img.shields.io/pypi/v/AdaptiveConsistency" alt="Twitter">
     </a>      
 </p>
 
@@ -72,6 +76,8 @@ from adaptive_consistency import AC, BetaStoppingCriteria
 ac = AC(model, stopping_criteria=BetaStoppingCriteria(0.95), max_gens = 40)
 ```
 
+Default stopping_criteria is BetaStoppingCriteria with confidence threshold = 0.95 (as used in the paper). 
+
 ### 3. Using the library
 
 You can directly run a whole loop of evaluation using:
@@ -85,10 +91,10 @@ For example, if using Openai api for sampling, you can use:
 ```python
 import openai
 
-ac.eval_loop(openai.Completion.create, engine="text-davinci-003", prompt="Solve the questions ahead", max_tokens=5)
+answers = ac.eval_loop(openai.Completion.create, engine="text-davinci-003", prompt="Solve the following question:", max_tokens=5)
 ```
 
-Or you can check for consistency of answers at each step:
+Or you can check for consistency of answers (and decide to break) at each step:
 
 ```python
 answers = []
@@ -97,6 +103,8 @@ for i in range(40):
     if ac.should_stop(answers):
         break
 ```
+
+Note: In the `generate_answer_from_model` function, you may want to extract the final answer after sampling from LLM.
 
 
 ### 4. Stoppping Criterias
@@ -110,7 +118,7 @@ You can use one of the following Stopping Criterias:
 5. `RandomStoppingCriteria (random)`: Randomly stops the sampling process with a pre-defined probability.
 6. `CRPStoppingCriteria (crp)`: Uses the Chinese Restaurant Process to guide the stopping criteria.
 
-Check out the paper for more details.
+Check out the [paper](https://arxiv.org/abs/2305.11860) for more details.
 
 
 ## Reproducing Numbers
@@ -180,4 +188,4 @@ This will print the average generations and accuracy on the terminal.
 
 ## LICENSE
 
-Adaptive-Consistency is MIT licensed, as found in the [LICENSE](LICENSE) file.
+Adaptive-Consistency is Apache licensed, as found in the [LICENSE](LICENSE) file.

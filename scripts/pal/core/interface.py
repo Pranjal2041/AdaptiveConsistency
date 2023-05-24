@@ -150,7 +150,7 @@ class ProgramInterface:
         self.verbose = verbose
 
         if openai_url is not None:
-            globals()['call_gpt'] = lambda *args, **kwargs : call_licuna(*args, **kwargs, url=openai_url)
+            globals()['call_gpt'] = lambda *args, **kwargs : call_vicuna(*args, **kwargs, url=openai_url)
 
     def reinit(self):
         import copy
@@ -164,7 +164,7 @@ class ProgramInterface:
         return [g.split('\n') for g in gens]
     
     def generate(self, prompt: str, temperature: float =0.0, top_p: float =1.0, 
-            max_tokens: int =512, majority_at: int =None, logprobs = 0):
+            max_tokens: int =512, majority_at: int = None, logprobs = 0):
         if logprobs != 0:
             gens, dt = call_gpt(prompt, model=self.model, stop=self.stop, 
                 temperature=temperature, top_p=top_p, max_tokens=max_tokens, majority_at=majority_at, logprobs=logprobs)   
@@ -203,7 +203,7 @@ class ProgramInterface:
         return ""
     
     def run(self, prompt: str, time_out: float =10, temperature: float =0.0, top_p: float =1.0, 
-            max_tokens: int =512, majority_at: int =None, prepend_to_code = "", logprobs = 0):
+            max_tokens: int =512, majority_at: int = None, prepend_to_code = "", logprobs = 0):
         code_snippets = self.generate(prompt, majority_at=majority_at, temperature=temperature, top_p=top_p, max_tokens=max_tokens, logprobs = logprobs)
         # print(code_snippets)
         results = []

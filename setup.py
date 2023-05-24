@@ -9,7 +9,7 @@ setup(
     name = "AdaptiveConsistency",
     version = "1.0.0",
     description = ("Library for running AdapativeConsistency based Inference on large language models."),
-    license = "MIT",
+    license = "Apache License 2.0",
     packages=find_packages(),
     long_description=read('README.md'),
     long_description_content_type='text/markdown',
