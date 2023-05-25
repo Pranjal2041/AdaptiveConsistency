@@ -8,3 +8,4 @@ outputs/vicuna-13b
 datasets
 scratch
 __pycache__
+*.pyc
