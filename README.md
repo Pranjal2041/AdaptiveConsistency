@@ -1,4 +1,4 @@
-# Let's Sample Step by Step: Adaptive-Consistency for Efficient Reasoning with LLMs
+# Let's Sample Step by Step: Adaptive-Consistency for Efficient Reasoning with LLMs (EMNLP 2023)
 
 <p align="center">
   <a href="http://sample-step-by-step.info/">Website</a> •
