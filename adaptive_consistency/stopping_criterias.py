@@ -20,7 +20,7 @@ class BetaStoppingCriteria(StoppingCriterias):
         super().__init__()
         self.conf_thresh = conf_thresh
 
-    def should_stop(self, answers : List, conf_thresh : int = None, verbose : bool = False) -> Dict:
+    def should_stop(self, answers : List, conf_thresh : float = None, verbose : bool = False) -> Dict:
         
         if conf_thresh is None: conf_thresh = self.conf_thresh
 
@@ -58,7 +58,7 @@ class RandomStoppingCriteria(StoppingCriterias):
         super().__init__()
         self.conf_thresh = conf_thresh
 
-    def should_stop(self, answers : List, conf_thresh : int = None, verbose : bool = False) -> Dict:
+    def should_stop(self, answers : List, conf_thresh : float = None, verbose : bool = False) -> Dict:
         
         if conf_thresh is None: conf_thresh = self.conf_thresh
 
@@ -75,7 +75,7 @@ class EntropyStoppingCriteria(StoppingCriterias):
         super().__init__()
         self.conf_thresh = conf_thresh
 
-    def should_stop(self, answers : List, conf_thresh : int = None, verbose : bool = False) -> Dict:
+    def should_stop(self, answers : List, conf_thresh : float = None, verbose : bool = False) -> Dict:
         
         if conf_thresh is None: conf_thresh = self.conf_thresh
 
@@ -101,7 +101,7 @@ class MajorityStoppingCriteria(StoppingCriterias):
         super().__init__()
         self.conf_thresh = conf_thresh
 
-    def should_stop(self, answers : List, conf_thresh : int = None, verbose : bool = False) -> Dict:
+    def should_stop(self, answers : List, conf_thresh : float = None, verbose : bool = False) -> Dict:
         
         if conf_thresh is None: conf_thresh = self.conf_thresh
 
@@ -146,7 +146,7 @@ class DirichletStoppingCriteria(StoppingCriterias):
         return integral_approximation
 
 
-    def should_stop(self, answers : List, conf_thresh : int = None, verbose : bool = False) -> Dict:
+    def should_stop(self, answers : List, conf_thresh : float = None, verbose : bool = False) -> Dict:
         
         if conf_thresh is None: conf_thresh = self.conf_thresh
 
