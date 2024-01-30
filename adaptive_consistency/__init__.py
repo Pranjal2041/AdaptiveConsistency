@@ -5,3 +5,4 @@ from .stopping_criterias import DirichletStoppingCriteria
 from .stopping_criterias import RandomStoppingCriteria
 from .stopping_criterias import MajorityStoppingCriteria
 from .stopping_criterias import EntropyStoppingCriteria
+from .stopping_criterias import StoppingCriterias
